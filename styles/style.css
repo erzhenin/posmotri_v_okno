@@ -245,11 +245,24 @@ ol {
 }
 
 .content__card-link {
+  margin: 2px;
+  display: block;
   text-decoration: none;
 }
 
+.content__card-link_current {
+  background-color: #545050;
+}
+
 .content__list-item {
+  padding: 2px;
+  min-block-size: 103px;
   inline-size: 100%;
+}
+
+.content__list-item > .content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .content__video-card {
@@ -263,20 +276,19 @@ ol {
 }
 
 .content__video-card-title {
-  padding-block-start: 2px;
   padding-block-end: 6px;
   color: #fff;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   font-style: normal;
-  line-height: 100%; /* 30px */
+  line-height: 1;
   text-transform: uppercase;
 }
 
 .content__video-card-description {
   color: #fff;
-  font-family: 'Fira Sans Condensed';
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
@@ -285,7 +297,8 @@ ol {
 
 .content__video-card-thumbnail {
   object-fit: cover;
-  /* Если я ставлю просто, без min и max, картинка не */
+  /* Если я ставлю просто, без min и max, 
+  картинка не занимает нужный размер */
   min-inline-size: 194px;
   min-block-size: 103px;
   max-block-size: 103px;
