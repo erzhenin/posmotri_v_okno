@@ -229,7 +229,7 @@ ol {
   gap: 30px;
   margin-block-start: 26px;
   overflow: auto;
-  max-block-size: 298px;
+  block-size: 298px;
 }
 
 .content__card-link {
