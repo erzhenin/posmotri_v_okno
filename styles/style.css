@@ -78,7 +78,7 @@ ol {
 .search-form__fieldset-title {
   margin-block-end: 5px;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: inherit;
   font-weight: 400;
   font-size: 18px;
 }
@@ -88,6 +88,7 @@ ol {
   justify-content: center;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
   inline-size: fit-content;
 }
 
@@ -100,14 +101,7 @@ ol {
   outline: none;
 }
 
-.search-form__label:has(.search-form__checkbox) {
-  cursor: pointer;
-}
-
-.search-form__label:has(
-    .search-form__textfield:focus-visible,
-    .search-form__checkbox:focus-visible
-  ) {
+.search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
@@ -117,6 +111,7 @@ ol {
   border-inline-end: none;
   border-block-start: 1px solid #fff;
   border-block-end: 1px solid #fff;
+  padding-block: 2px;
   color: rgb(255 255 255 / 0.7);
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
@@ -124,7 +119,6 @@ ol {
   background-color: transparent;
   appearance: none;
   min-inline-size: 225px;
-  min-block-size: 27px;
 }
 
 .search-form__textfield:focus {
@@ -139,7 +133,6 @@ ol {
   padding-block-end: 5px;
 }
 
-.search-form__checkbox:active + .search-form__pseudo-checkbox::after,
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: '';
   background-color: #fff;
@@ -156,8 +149,6 @@ ol {
   min-block-size: 19px;
 }
 
-
-
 .button {
   border: 1px solid #fff;
   color: #fff;
@@ -167,6 +158,7 @@ ol {
   text-align: center;
   background-color: transparent;
   cursor: pointer;
+  min-block-size: 34px;
 }
 
 .button:focus {
@@ -190,8 +182,7 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 194px;
-  height: 34px;
+  inline-size: 194px;
 }
 
 /* Content details section */
@@ -214,11 +205,6 @@ ol {
 
 .content__accent {
   color: #545050;
-  font-family: Oswald, sans-serif;
-  font-weight: 700;
-  font-size: 75px;
-  line-height: 0.94;
-  text-transform: uppercase;
 }
 
 .content__list {
@@ -248,16 +234,17 @@ ol {
   inline-size: 100%;
 }
 
-.content__list-item > .content__card-link:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
 
-.content__list-item:hover {
+.content__card-link:hover {
   text-decoration: underline;
+  text-decoration-color: #fff;
 }
 
-.content__list-item:active > .content__card-link {
+.content__card-link:active {
   background-color: #545050;
 }
 
@@ -317,5 +304,4 @@ ol {
   align-items: center;
   align-self: center;
   min-inline-size: 399px;
-  min-block-size: 34px;
 }
